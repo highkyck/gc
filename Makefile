@@ -16,6 +16,6 @@ all: $(DIST)
 $(DIST): $(OBJS)
 
 clean:
-	$(RM) $(deps) $(OBJS)
+	$(RM) $(deps) $(OBJS) $(DIST)
 
 -include $(deps)
