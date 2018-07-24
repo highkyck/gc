@@ -22,8 +22,12 @@ void test2()
     VM *vm = new_vm();
     push_int(vm, 1);
     push_int(vm, 2);
-    pop(vm);
-    pop(vm);
+    Object *o1 = pop(vm);
+    Object *o2 = pop(vm);
+    dump(o1);
+    printf("\n");
+    dump(o2);
+    printf("\n");
 
     __gc(vm);
     free_vm(vm);
@@ -42,6 +46,10 @@ void test3()
     push_pair(vm);
 
     __gc(vm);
+
+    Object *o1 = pop(vm);
+    dump(o1);
+    printf("\n");
     free_vm(vm);
 }
 

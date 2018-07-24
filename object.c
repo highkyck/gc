@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "types.h"
 #include "object.h"
@@ -20,4 +21,21 @@ Object *new_object(VM *vm, _type t)
     vm->num_objects++;
 
     return object;
+}
+
+void dump(Object *object)
+{
+    switch (V_TYPE_P(object)) {
+    case IS_INT:
+        printf("INT:%lld", V_LVAL_P(object));
+        break;
+    case IS_PAIR:
+        printf("PAIR:{");
+        dump(V_PVAL_P(object).head);
+        printf(", ");
+        dump(V_PVAL_P(object).tail);
+        printf("}");
+    default:
+        break;
+    }
 }

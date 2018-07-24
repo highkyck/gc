@@ -4,5 +4,6 @@
 #include "types.h"
 
 Object *new_object(VM *, _type);
+void dump(Object *object);
 
 #endif /* OBJECT_H */

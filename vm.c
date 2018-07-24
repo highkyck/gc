@@ -53,19 +53,3 @@ void free_vm(VM *vm)
     free(vm);
 }
 
-void dump(Object *object)
-{
-    switch (V_TYPE_P(object)) {
-    case IS_INT:
-        printf("INT:%lld\n", V_LVAL_P(object));
-        break;
-    case IS_PAIR:
-        printf("{");
-        dump(V_PVAL_P(object).head);
-        printf(", ");
-        dump(V_PVAL_P(object).tail);
-        printf("}");
-    default:
-        break;
-    }
-}
