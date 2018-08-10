@@ -1,10 +1,10 @@
 #include <assert.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-#include "types.h"
-#include "object.h"
 #include "gc.h"
+#include "object.h"
+#include "types.h"
 
 Object *new_object(VM *vm, _type t)
 {

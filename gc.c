@@ -1,8 +1,8 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-#include "types.h"
 #include "gc.h"
+#include "types.h"
 
 void mark_all(VM *vm)
 {
@@ -46,6 +46,6 @@ void __gc(VM *vm)
     mark_all(vm);
     sweep(vm);
     vm->max_objects = vm->num_objects * 2;
-    printf("Collected %lu objects, %lu remaining.\n", num_objects - vm->num_objects,
-           vm->num_objects);
+    printf("Collected %lu objects, %lu remaining.\n",
+           num_objects - vm->num_objects, vm->num_objects);
 }

@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-#include "types.h"
-#include "vm.h"
 #include "gc.h"
 #include "object.h"
+#include "types.h"
+#include "vm.h"
 
-void test1() 
+void test1()
 {
     printf("Test 1: Objects on stack are preserved.\n");
     VM *vm = new_vm();
@@ -53,7 +53,7 @@ void test3()
     free_vm(vm);
 }
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
     test1();
     test2();

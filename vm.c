@@ -52,4 +52,3 @@ void free_vm(VM *vm)
     __gc(vm);
     free(vm);
 }
-
